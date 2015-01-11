@@ -55,9 +55,6 @@ HEADER
     color: #FFF;
     text-align: center;
     position: relative;
-    z-index: 2;
-    /*padding: 80px 0;*/
-    z-index: 1;
     background-color: #3D3C3B;
 }
 .counter{
@@ -81,15 +78,15 @@ HEADER
 }
 
 #minutes {    
-    position:absolute;
-    top:300px;
-    left:400px;
+    position:relative;
+    top:150px;
+    left:-6px;
 }
 
 #seconds {
-    position:absolute;
-    top:300px;
-    left: 560px;
+    position:relative;
+    top:150px;
+    left: 6px;
 }
 
 .timer_box h1{
@@ -136,6 +133,10 @@ HEADER
     position: relative;
     top: 200px;
     background-color: #3D3C3B;
+}
+
+#transparent {
+    height:390px;
 }
 
 #opaque1 {
@@ -708,3 +709,20 @@ PLUGINS
             transition-duration: 0.4s;
 }
 .tp-bullets.simplebullets.round .bullet.last {   margin-right:3px;}
+
+/******************************************************************************************************************************
+NOT WAVING
+*******************************************************************************************************************************/
+
+
+ul {
+}
+
+li {
+    list-style-type: none;
+}
+
+.waving, .waving #timer {
+    text-align: center;
+    color: #FFF;
+}

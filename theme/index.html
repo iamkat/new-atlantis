@@ -36,22 +36,20 @@
         <div class="container">
           <header>
               <div class="counter">
-              <h3>total</h3>
+              <h3>total&nbsp;<span id="count">0</span>/<span id="threshold">0</span></h3>
               </div>
               <div class="hashtagtitle">
                 <!-- HEADLINE -->
               <h1>#water discussion </h1>
               </div>
           </header>
-            <!-- START TIMER -->
-            <div id="timer">
-              <div id="opaque1" class="foregroundDiv"></div>
-              <div id="opaque2" class="foregroundDiv"></div>
-              <div id="opaque3" class="foregroundDiv"></div>
-              <div id="opaque4" class="foregroundDiv"></div>
-              <div id="opaque5" class="foregroundDiv"></div>
-              <div id="opaque6" class="foregroundDiv"></div>
-              <div id="opaque7" class="foregroundDiv"></div>
+        <!-- START TIMER -->
+        </div>
+    </section>
+    <!-- END HEADER -->
+
+    <section class="waving">
+       <div id="timer">
                 <!--<p id="message"></p>-->
                 <!--Remove hours
                 <div id="hours" class="timer_box"></div>
@@ -60,69 +58,37 @@
               <div id="seconds" class="timer_box"></div>
             <!-- END TIMER -->
             <!-- import data from the Node Red scraper, trying to do the 3rd example on this webpage http://www.html5rocks.com/en/tutorials/file/dndfiles/ -->
-
-              <div class="backgroundDiv">
             <!--<input type="file" id="files" name="/Users/iamkat/dev/node-red-0.8.1/tweets_data" />-->
-              <p>
-                <ol>
-                  <li>“@Ben_Swaag: 🐶 #fail 😭 https:&#x2F;&#x2F;t.co&#x2F;dj4rLp0RhT”</li>
-                  <li>Really nigga? #fail https:&#x2F;&#x2F;t.co&#x2F;Q7CdLgQ9LW</li>
-                  <li>RT @SuperWaterMan: 22 benefits of Drinking #Water - for health, fitness, diet, and sports. #thegiftofwater http:&#x2F;&#x2F;t.co&#x2F;u2lhJbKCFh</li>
-                  <li>@publichistory this looks to be important. Too important to use spam to reach me #fail</li>
-                  <li>RT @ExactET: Since our launch in 2006, our clients have saved 2.3 Billion litres of water, the equivalent of 933 Olympic-size swimming pool…</li>
-                  <li>El fin de semana hubo un gran evento: @Golf_Latino, donde participaron varios jugadores @PGATOUR. Los medios nacionales no cubrieron #Fail</li>
-                  <li>RT @0neSmileAtATime: Dog vs Mirror Fail http:&#x2F;&#x2F;t.co&#x2F;E4L6mrGRyA #Dog #vs #Mirror #Fail #Epic #EpicFail #Owned #Noob #Funny #Cute #Adorable #…</li>
-                  <li>Making Failure Plans http:&#x2F;&#x2F;t.co&#x2F;O04uiHW6L4 #fail #business #money #entrepreneur #plan #planning #hope #help</li>
-                  <li>RT @BrookeDBarton: Spread the word! The @Ceresnews #water team seeks #intern w quant skills for our Boston office. Apply here: http:&#x2F;&#x2F;t.co&#x2F;…</li>
-                  <li>So that weight watchers commercials about the snacks? Well it just makes me want a snack. #fail</li>
-                  <li>New post: #FAIL #funny #humor #selfie 10 Ridiculous Selfie Videos http:&#x2F;&#x2F;t.co&#x2F;nLgCiMjKNJ</li>
-                  <li>RT @Ben_Swaag: 🐶 #fail 😭 https:&#x2F;&#x2F;t.co&#x2F;pRe2T4pYex</li>
-                  <li>.@HealthCareGov have reset password three times but website won&#39;t get past login page. #sigh #FAIL</li>
-                  <li>RT @RamziShukri: Halllllllooooooo!! I was supposed to get my stuff delivered today!! #BadService #Limaza #Fail #WhyIkeaWhy #NotHappy @IKEAJ…</li>
-                  <li>Zeg @ingnl dit is toch niet oké! Elke 3 maanden een negatieve rentewijziging! Waarom spaar ik nog (bij jullie) ?!! #Ingbank #fail #ingnl</li>
-                </ol>
-              </p>
-              </div>
-
             </div>
-
-            
-			</div>
-            
-        
-        <!-- LAYER OVER THE SLIDER TO MAKE THE WHITE TEXTE READABLE -->
-        <div id="layer"></div>
-        <!-- END LAYER -->
-        <!-- START SLIDER -->
-        <!--<div id="slider" class="rev_slider">
-            <ul>
-              <li data-transition="slideleft" data-slotamount="1" data-thumb="assets/img/slider/1.jpg">
-                <img src="assets/img/slider/1.jpg">
-              </li>
-              <li data-transition="slideleft" data-slotamount="1" data-thumb="assets/img/slider/2.jpg">
-                <img src="assets/img/slider/2.jpg">
-              </li>
-              <li data-transition="slideleft" data-slotamount="1" data-thumb="assets/img/slider/3.jpg">
-                <img src="assets/img/slider/3.jpg">
-              </li>
-              <li data-transition="slideleft" data-slotamount="1" data-thumb="assets/img/slider/4.jpg">
-                <img src="assets/img/slider/4.jpg">
-              </li>
-            </ul>
-        </div>-->
-        <!-- END SLIDER -->
-    </section>
-    <!-- END HEADER -->
-
+            <div id="bottom">
+              <ul id="tweets">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+        </section>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+<!--	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/soon/plugins.js"></script>
-    <script src="assets/js/soon/jquery.themepunch.revolution.min.js"></script>
-    <script src="assets/js/jquery.websocket-0.0.1.js"></script>
+    <script src="assets/js/soon/jquery.themepunch.revolution.min.js"></script>-->
     <script src="assets/js/soon/custom.js"></script>
 
   </body>
