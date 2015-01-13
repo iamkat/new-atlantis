@@ -10,7 +10,7 @@ COMING SOON PAGE
     WEBSOCKET
     *******************************************************************************************************************************/
 
-    var current_end = new Date();
+    var launch = new Date();
 
     var ws = new WebSocket("ws://127.0.0.1:1880/ws/tweets")
 
@@ -28,17 +28,16 @@ COMING SOON PAGE
         if (data.payload == "connected") return true;
         console.log(data)
         if (!data.pour) {
-            current_start = new Date(data.cycle.start);
-            current_end = new Date(data.cycle.end);
-            setDate(current_end);
+            launch = new Date(data.cycle.end);
+            setDate();
             setCount(data.count, data.cycle.threshold)
             if (data.tweets.length !=0) {
                 setTweets(data.tweets, data.count, data.cycle.tweet_window);
             }
         } else if (data.reset) {
             console.log('reset')
-            var now = new Date()
-            setDate(now)
+            launch = new Date()
+            setDate()
             setCount(0,0);
             setTweets([],0,15)
         }
@@ -84,7 +83,7 @@ COMING SOON PAGE
             n = n + '';
             return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
             }
-    function setDate(launch){
+    function setDate(){
         var now = new Date();
         if( launch <= now ){
             //days.html('<h1>0</H1><p>Day</p>');
