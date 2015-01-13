@@ -12,7 +12,7 @@ COMING SOON PAGE
 
     var launch = new Date();
 
-    var ws = new WebSocket("ws://127.0.0.1:1880/ws/tweets")
+    var ws = new WebSocket("ws://" + window.location.host + "/ws/tweets")
 
     ws.onopen = function (event) {
 //      var now = new Date()
