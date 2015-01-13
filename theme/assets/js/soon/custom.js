@@ -27,20 +27,20 @@ COMING SOON PAGE
         data = JSON.parse(event.data); 
         if (data.payload == "connected") return true;
         console.log(data)
-        if (!data.pour) {
+        if (data.reset) {
+            console.log('reset')
+            launch = new Date()
+            setDate()
+            setCount(0,0);
+            setTweets([],0,15)
+        } else if (!data.pour) {
             launch = new Date(data.cycle.end);
             setDate();
             setCount(data.count, data.cycle.threshold)
             if (data.tweets.length !=0) {
                 setTweets(data.tweets, data.count, data.cycle.tweet_window);
             }
-        } else if (data.reset) {
-            console.log('reset')
-            launch = new Date()
-            setDate()
-            setCount(0,0);
-            setTweets([],0,15)
-        }
+        } 
     };
 
     function setCount(count, threshold) {
