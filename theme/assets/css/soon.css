@@ -57,46 +57,7 @@ HEADER
     position: relative;
     background-color: #3D3C3B;
 }
-.counter{
-    width: 200px ;
-    float: left;
-}
-.hashtagtitle{
-    width: 900px;
-    float: right;
-}
-.timer_box{
-    margin: 3px 14px;
-    display: inline-block;
-    padding: 12px 12px 12px 20px;
-    text-align: center;
-    width: 130px;
-    z-index: 100;
 
-/*    border-radius: 50%;
-    border: 4px solid red;*/
-}
-
-#minutes {    
-    position:relative;
-    top:150px;
-    left:-6px;
-}
-
-#seconds {
-    position:relative;
-    top:150px;
-    left: 6px;
-}
-
-.timer_box h1{
-    font-size: 120px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: red;
-}
-.timer_box p{ margin-top: 0px;}
 /*#layer{
     background-color: rgba(0, 0, 0, 0.7);
     left: 0; top: 0;
@@ -122,22 +83,7 @@ HEADER
 .centered {
 	text-align: center;
 }
-.backgroundDiv {
-    z-index: -1;
-    position: absolute;
-    top:20;
-}
 
-.foregroundDiv {
-    z-index: 30;
-    position: relative;
-    top: 200px;
-    background-color: #3D3C3B;
-}
-
-#transparent {
-    height:390px;
-}
 
 #opaque1 {
 
@@ -714,15 +660,95 @@ PLUGINS
 NOT WAVING
 *******************************************************************************************************************************/
 
+.backgroundDiv {
+    z-index: -1;
+    position: absolute;
+    top:20;
+}
+
+.foregroundDiv {
+    z-index: 30;
+    position: relative;
+    top: 400px;
+    background-color: #3D3C3B;
+}
+
+#transparent {
+    height:790px;
+}
+
+#pour {
+    display:none;
+    position: absolute;
+    top: 0;
+    width:100%;
+    height:100%;
+    background-color: red;
+}
 
 ul {
 }
 
 li {
     list-style-type: none;
+    font-size:24px;
+}
+
+#header {
+    margin:10px 50px;
 }
 
 .waving, .waving #timer {
     text-align: center;
     color: #FFF;
 }
+
+#bottom {
+    margin-top:270px;
+}
+.timer_box{
+    margin: 3px 14px;
+    display: inline-block;
+    padding: 12px 12px 12px 20px;
+    text-align: center;
+    width: 130px;
+    z-index: 100;
+
+/*    border-radius: 50%;
+    border: 4px solid red;*/
+}
+
+#header h1 {
+    font-size: 80px;
+}
+
+.counter{
+    width: 200px ;
+    float: left;
+}
+
+.hashtagtitle{
+    width: 900px;
+    float: right;
+}
+
+#minutes {    
+    position:relative;
+    top:470px;
+    left:290px;
+}
+
+#seconds {
+    position:relative;
+    top:470px;
+    left: 350px;
+}
+
+.timer_box h1{
+    font-size: 160px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: red;
+}
+.timer_box p{ margin-top: 0px;}

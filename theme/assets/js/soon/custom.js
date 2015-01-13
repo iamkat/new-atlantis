@@ -18,30 +18,47 @@ COMING SOON PAGE
 //      var now = new Date()
 //      setDate(now)
       setCount(0,0);
-      setTweets([],0,15)
+      setTweets([],0,20)
       ws.send("connected")
+
+//    minutes.html('<h1>00:</h1>');
+//    seconds.html('<h1>00</h1>');
     };
     
 
     ws.onmessage = function(event) { 
         data = JSON.parse(event.data); 
-        if (data.payload == "connected") return true;
-//        console.log(data)
-        if (data.reset) {
-            console.log('reset')
-            launch = new Date()
-            setDate()
-            setCount(0,0);
-            setTweets([],0,15)
-        } else if (!data.pour) {
+        if (data.payload == "connected") {
             launch = new Date(data.cycle.end);
             setDate();
-            setCount(data.count, data.cycle.threshold)
+            return true;
+        }
+        console.log(data)
+        setCount(data.count, data.cycle.threshold)
+        if (data.pour) {
+            console.log('pour')
+            setPour()
+            launch = new Date(data.cycle.end);
+            setDate();
+            setTweets([],0,20);
+        } else if (data.reset) {
+            console.log('reset')
+            launch = new Date(data.cycle.end);
+            setDate();
+            setTweets([],0,20);
+        } else if (!data.pour) {
             if (data.tweets.length !=0) {
                 setTweets(data.tweets, data.count, data.cycle.tweet_window);
             }
         } 
     };
+
+    function setPour() {
+        $("#pour").show();
+        setTimeout(function(){
+            $("#pour").hide();
+        }, 2000);
+    }
 
     function setCount(count, threshold) {
         $("#count").html(count);
@@ -53,14 +70,14 @@ COMING SOON PAGE
             index = count - tweet_window + idx;
             if (index < 0) {
                 $(el).html('&nbsp;');
-            } else if (count < 15) {
+            } else if (count < tweet_window) {
                 var tweet = tweets[index];
                 $(el).css('opacity', (idx+1)/tweet_window);
-                $(el).html(index+1 + '. @' + tweet.user.screen_name + ':' + tweet.text);
+                $(el).html(index+1 + '. <strong>@' + tweet.user.screen_name + '</strong> ' + tweet.text.replace(/\#water/gi, "<span style='color:red;'>#water</span>"));
             } else {
                 var tweet = tweets[idx];
                 $(el).css('opacity', (idx+1)/tweet_window);
-                $(el).html(index+1 + '. @' + tweet.user.screen_name + ':' + tweet.text);
+                $(el).html(index+1 + '. <strong>@' + tweet.user.screen_name + '</strong> ' + tweet.text.replace(/\#water/gi, "<span style='color:red;'>#water</span>"));
             }
         });
     }
@@ -85,23 +102,10 @@ COMING SOON PAGE
             }
     function setDate(){
         var now = new Date();
-        if( launch <= now ){
-            //days.html('<h1>0</H1><p>Day</p>');
-            //hours.html('<h1>0</h1><p>Hour</p>');
-            minutes.html('<h1>00:</h1>');
-            seconds.html('<h1>00</h1>');
-            //message.html('OUR SITE IS NOT READY YET...');
-            ws.send("connected")
-        }
-        else{
-            var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
-            var d = Math.floor(s/86400);
-            days.html('<h1>'+d+'</h1><p>Day'+(d>1?'s':''),'</p>');
-            s -= d*86400;
+        if( launch > now ){
 
-            var h = Math.floor(s/3600);
-            hours.html('<h1>'+h+'</h1><p>Hour'+(h>1?'s':''),'</p>');
-            s -= h*3600;
+//            var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
+            var s = (launch.getTime() - now.getTime())/1000;
 
             var m = Math.floor(s/60);
             minutes.html('<h1>'+pad(m,2)+':</h1>');
@@ -109,8 +113,6 @@ COMING SOON PAGE
             s = Math.floor(s-m*60);
             seconds.html('<h1>'+pad(s,2)+'</h1>');
             setTimeout(setDate, 1000);
-
-            message.html('OUR SITE IS NOT READY YET, BUT WE ARE COMING SOON');
         }
     }
 })(jQuery);
