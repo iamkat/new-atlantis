@@ -26,7 +26,7 @@ COMING SOON PAGE
     ws.onmessage = function(event) { 
         data = JSON.parse(event.data); 
         if (data.payload == "connected") return true;
-        console.log(data)
+//        console.log(data)
         if (data.reset) {
             console.log('reset')
             launch = new Date()
