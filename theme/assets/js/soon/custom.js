@@ -51,6 +51,8 @@ COMING SOON PAGE
                 setTweets(data.tweets, data.count, data.cycle.tweet_window);
             }
         } 
+        data.tweets = null;
+        data = null;
     };
 
     function setPour() {
