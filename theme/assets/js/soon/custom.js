@@ -35,7 +35,16 @@ COMING SOON PAGE
         }
         console.log(data)
         setCount(data.count, data.cycle.threshold)
-        if (data.pour) {
+        if (data.end) {
+            console.log('end')
+            launch = new Date();
+            setCount(0,0);
+            setPour()
+            setDate();
+            minutes.html('<h1>00:</h1>');
+            seconds.html('<h1>00</h1>');
+            setTweets([],0,20);
+        } else if (data.pour) {
             console.log('pour')
             setPour()
             launch = new Date(data.cycle.end);
