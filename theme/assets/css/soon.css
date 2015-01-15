@@ -691,7 +691,7 @@ ul {
 
 li {
     list-style-type: none;
-    font-size:24px;
+    font-size:20px;
 }
 
 #header {
@@ -704,7 +704,7 @@ li {
 }
 
 #bottom {
-    margin-top:270px;
+    margin-top:150px;
 }
 .timer_box{
     margin: 3px 14px;
@@ -734,13 +734,13 @@ li {
 
 #minutes {    
     position:relative;
-    top:470px;
+    top:330px;
     left:290px;
 }
 
 #seconds {
     position:relative;
-    top:470px;
+    top:330px;
     left: 350px;
 }
 

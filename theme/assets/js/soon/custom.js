@@ -75,11 +75,11 @@ COMING SOON PAGE
             } else if (count < tweet_window) {
                 var tweet = tweets[index];
                 $(el).css('opacity', (idx+1)/tweet_window);
-                $(el).html(index+1 + '. <strong>@' + tweet.user.screen_name + '</strong> ' + tweet.text.replace(/\#water/gi, "<span style='color:red;'>#water</span>"));
+                $(el).html(index+1 + '. <strong>@' + tweet.user.screen_name + '</strong> ' + tweet.text.replace(/\#water/gi, "<span style='color:#FF7F3F;'>#water</span>"));
             } else {
                 var tweet = tweets[idx];
                 $(el).css('opacity', (idx+1)/tweet_window);
-                $(el).html(index+1 + '. <strong>@' + tweet.user.screen_name + '</strong> ' + tweet.text.replace(/\#water/gi, "<span style='color:red;'>#water</span>"));
+                $(el).html(index+1 + '. <strong>@' + tweet.user.screen_name + '</strong> ' + tweet.text.replace(/\#water/gi, "<span style='color:#FF7F3F;'>#water</span>"));
             }
         });
     }
