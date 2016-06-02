@@ -26,3 +26,5 @@ Copy node-red files
 
  * http://nodered.org/docs/hardware/raspberrypi.html#making-node-red-autostart-on-boot-optional
 
+# Wiring
+Ground to pin #6 (GND), live wire to pin #12, (GPIO 1 / BCM GPIO 18 / WiringPi 1)
